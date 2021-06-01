@@ -1,0 +1,240 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <h3 class="title text-center">Productos</h3>
+          <br />
+          <div class="nav-center">
+              <ul class="nav nav-pills nav-pills-success nav-pills-icons" role="tablist">
+                  <!-- color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"  -->
+                  
+                  <li class="active">
+                      <a href="#description-1" role="tab" data-toggle="tab">
+                          <i class="material-icons">add_circle</i> Agregar 
+                      </a>
+                  </li>
+                  
+              </ul>
+          </div>
+        </div>
+
+          
+          <div class="tab-content">
+            <!--
+               Agregar   -->
+            <div class="tab-pane active" id="description-1">
+
+              <div class="col-md-12 ">
+                <div class="card">
+                    <form #f2="ngForm" class="form-horizontal" novalidate (ngSubmit)="save(f2.value, f2.valid)">
+                        
+                      <div class="card-header text-center " data-background-color="green">
+                            <h4 class="card-title">Nuevo producto</h4>
+                        </div>
+
+                 <div class="card-content">
+
+                        <h4 class="card-title"> <i class="material-icons">create</i> Informacion basica</h4>
+
+                        
+                            <div class="row">    
+                               <div class="col-sm-6 ">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label"></label>
+                                        <input class="form-control" type="text" name="text"  [ngModel]="typeValidation.text"
+                                          required  #text="ngModel" placeholder="Nombre">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label"></label>
+                                        <input class="form-control" type="number" name="number" number="true" [ngModel]="typeValidation.number"
+                                          required  #number="ngModel" placeholder="Codigo">
+                                    </div>
+                                </div>
+                                
+                                
+                           
+                              <div class="col-sm-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input class="form-control" type="number" name="number" number="true" [ngModel]="typeValidation.number"
+                                      required  #number="ngModel" placeholder="Unidades">
+                                </div>
+                            </div>
+                            
+
+                              <div class="col-sm-6 ">
+                                <div class="form-group label-floating">
+                                    <label class="control-label"></label>
+                                    <input class="form-control" type="number" name="number" number="true" [ngModel]="typeValidation.number"
+                                      required  #number="ngModel" placeholder="Precio">
+                                </div>
+                            </div>
+                            
+                          </div>
+
+
+                          <div class="row">
+                 <h4 class="card-title "> <i class="material-icons">create</i> Categoria  </h4>
+                 <div class="col-sm-6">
+                 <div class="dropdown">
+                  <button href="#pablo" class="dropdown-toggle btn btn-success btn-round btn-block" data-toggle="dropdown">Seleccionar categoria
+                      <b class="caret"></b>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-left">
+                      <li class="dropdown-header">Dropdown header</li>
+                      <li>
+                          <a href="#pablo">Action</a>
+                      </li>
+                      <li>
+                          <a href="#pablo">Another action</a>
+                      </li>
+                      <li>
+                          <a href="#pablo">Something else here</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                          <a href="#pablo">Separated link</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                          <a href="#pablo">One more separated link</a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+                 
+                        </div>
+        
+               
+              <div class="row">
+                  <div class="col-sm-5">
+                <h4 class="card-title"> <i class="material-icons">create</i>
+                           Proveedor   </h4>
+                           <div class="dropdown">
+                            <button href="#pablo" class="dropdown-toggle btn btn-success btn-round btn-block" data-toggle="dropdown">Seleccionar Proveedor
+                                <b class="caret"></b>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li class="dropdown-header">Dropdown header</li>
+                                <li>
+                                    <a href="#pablo">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#pablo">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#pablo">Something else here</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#pablo">Separated link</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#pablo">One more separated link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 ">
+                        <div class="form-group label-on-left">
+                            <label class="control-label"></label>
+                            <input class="form-control" type="text" name="text"  [ngModel]="typeValidation.text"
+                              required  #text="ngModel" placeholder="Marca">
+                        </div>
+                    </div>
+                    </div>
+              
+             
+                           
+                           <div class="row">
+                            <h4 class="card-title"> <i class="material-icons">create</i>
+                                Informacion Adiccional   </h4>
+
+                                <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="label-control">Fecha de registro</label>
+                                                <input type="text" class="form-control datepicker" value="14/02/2021" />
+                                            </div>                
+                                </div>
+                                <div class="col-sm-12">
+                                <div class="dropdown">
+                                    <button href="#pablo" class="dropdown-toggle btn btn-success btn-round btn-block" data-toggle="dropdown">Seleccionar Proveedor
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left">
+                                        <li class="dropdown-header">Dropdown header</li>
+                                        <li>
+                                            <a href="#pablo">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#pablo">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#pablo">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#pablo">Separated link</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#pablo">One more separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            </div>
+
+                           <div class="row">
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail img-circle">
+                                        <img src="../../assets/img/placeholder.jpg" alt="...">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                                    <div>
+                                        <span class="btn btn-round btn-success btn-file">
+                                            <span class="fileinput-new">Agregar foto </span>
+                                            <span class="fileinput-exists">Cambiar</span>
+                                            <input type="file" name="..." />
+                                        </span>
+                                        <br />
+                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Eliminar</a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                           
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-success btn-fill" [disabled]="!f2.valid"  (click)="showSwal('success-message')">Agregar Nuevo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            </div>
+            <!--
+                     termina agregar   -->
+           
+          
+
+           <!--
+                     Lista   -->
+           
+          
+                  
+                            <!--
+                                      Termina lista   -->
+                            
+          </div>
+
+  </div>
+</div>

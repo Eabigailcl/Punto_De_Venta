@@ -1,0 +1,141 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <h3 class="title text-center">Productos</h3>
+          <br />
+          <div class="nav-center">
+              <ul class="nav nav-pills nav-pills-primary nav-pills-icons" role="tablist">
+                  <!-- color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"  -->
+                  
+                  <li class="active">
+                      <a href="#description-1" role="tab" data-toggle="tab">
+                          <i class="material-icons">add_circle</i> Agregar 
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#schedule-1" role="tab" data-toggle="tab">
+                        <i class="material-icons">info</i> Lista
+                    </a>
+                </li>
+              </ul>
+          </div>
+        </div>
+
+          
+          <div class="tab-content">
+            <!--
+               Agregar   -->
+            <div class="tab-pane active" id="description-1">
+
+              <div class="col-md-12 ">
+                <div class="card">
+                    <form #f2="ngForm" class="form-horizontal" novalidate (ngSubmit)="save(f2.value, f2.valid)">
+                        
+                      <div class="card-header text-center " data-background-color="purple">
+                            <h4 class="card-title">Nuevo producto</h4>
+                        </div>
+
+                 <div class="card-content">
+
+                        <h4 class="card-title"> <i class="material-icons">create</i> Informacion basica</h4>
+
+                        
+                            <div class="row">    
+                               <div class="col-sm-6 ">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label"></label>
+                                        <input class="form-control" type="text" name="text"  [ngModel]="typeValidation.text"
+                                          required  #text="ngModel" placeholder="Nombre">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-sm-6 ">
+                                  <div class="form-group label-floating">
+                                      <label class="control-label"></label>
+                                      <input class="form-control" type="text" name="text"  [ngModel]="typeValidation.text"
+                                        required  #text="ngModel" placeholder="Nombre">
+                                  </div>
+                                  
+                              </div>
+                                
+                                
+                           
+                              
+
+                             
+                            
+                          </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-primary btn-fill" [disabled]="!f2.valid"  (click)="showSwal('success-message')">Agregar Nuevo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            </div>
+            <!--
+                     termina agregar   -->
+           
+          
+
+           <!--
+                     Lista   -->
+                     <div class="tab-pane " id="schedule-1">
+                    
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="card">
+                                  <div class="card-header card-header-icon" data-background-color="rose">
+                                      <i class="material-icons">assignment</i>
+                                  </div>
+                                  <div class="card-content">
+                                      <h4 class="card-title">Administradores</h4>
+                                      <div class="content table-responsive">
+                                          <table class="table">
+                                                  <thead>
+                                                      <tr>
+                                                        <th>{{ tableData1.headerRow[0] }}</th>
+                                                        <th>{{ tableData1.headerRow[1] }}</th>
+                                                        <th>{{ tableData1.headerRow[2] }}</th>
+                                                        <th class="text-right" >{{ tableData1.headerRow[3] }}</th>
+                                                      
+                                                      </tr>
+                                                  </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let categ of categorias">
+                                                        <td class="text-center">{{categ.id}}</td>   
+                                                        <td>{{categ.nombre}}</td>
+                                                        <td>{{categ.descripcion}}</td>
+                                                        <td class="td-actions text-right">
+                                                          <button type="button" rel="tooltip" class="btn btn-info btn-round " [routerLink]="['/editaradmin']"   data-placement="bottom" title="Editar">
+                                                              <i class="material-icons">edit</i>
+                                                          </button>
+      
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round "  (click)="eliminarAdmin(admin)" data-placement="bottom" title="Eliminar">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+          
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                         </div>
+          
+      
+                  </div>
+          
+                  
+                            <!--
+                                      Termina lista   -->
+                            
+          </div>
+
+  </div>
+</div>

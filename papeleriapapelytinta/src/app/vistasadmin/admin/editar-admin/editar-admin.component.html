@@ -1,0 +1,59 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title"> Editar perfil -
+                            <small class="category">Completa tu perfil</small>
+                        </h4>
+                        <form #f2="ngForm"   (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Nombre</label>
+                                        <input   type="text" class="form-control" name="nombre" [(ngModel)]="admin.nombre" >
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Apellido</label>
+                                        <input  type="text" class="form-control" name="apellido" [(ngModel)]="admin.apellido" placeholder="{{admin.apellido}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Correo</label>
+                                        <input type="email" class="form-control" name="email"  [(ngModel)]="admin.correo"
+                      required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" placeholder="{{admin.correo}}">
+                    <small [hidden]="email.valid || (email.pristine && !f2.submitted)" class="text-danger">
+                      Email es requerido en un formato como este: <i>john@doe.com</i>.
+                    </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Contraseña</label>
+                                        <input   type="text" class="form-control" name="password" [(ngModel)]="admin.password" required #text="ngModel" >
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+                           
+                            <button type="submit" [disabled]="!f2.valid" class="btn btn-rose pull-right">Actualizar  Perfil</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  </div>
+  

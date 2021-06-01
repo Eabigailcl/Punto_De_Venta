@@ -1,0 +1,118 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="title text-center">Ventas</h3>
+           </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="col-sm-5 text-left">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Buscar Producto">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>     
+                    </div>
+                    <div class="col-sm-5 text-right">
+                       <button type="button" class="btn btn-danger" [routerLink]="['/inventario']" >
+                            <i class="material-icons">person</i>
+                            <p>Lista de articulos</p>
+                        </button>   
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-content text-center">
+                        <code>col-md-3 col-md-offset-6</code>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="red">
+                                    <i class="material-icons">assignment</i>
+                                </div>
+                    <div class="card-content text-center">
+                      
+                       
+                                
+                                <div class="card-content">
+                                    <h4 class="card-title">Lista de productos</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-shopping">
+                                                <thead>
+                                                    <tr>
+                                                      <th class="text-center">{{ tableData3.headerRow[0] }}</th>
+                                                      <th class="text-center">{{ tableData3.headerRow[1] }}</th>
+                                                      
+                                                      <th class="th-description">{{ tableData3.headerRow[2] }}</th>
+                                                      <th class="th-description">{{ tableData3.headerRow[3] }}</th>
+                                                      <th class="text-right">{{ tableData3.headerRow[4] }}</th>
+                                                      <th class="text-right">{{ tableData3.headerRow[5] }}</th>
+                                                      
+                                                      <th></th>
+                                                    </tr>
+                                                </thead>
+                                              <tbody>
+                                                  <tr *ngFor="let row of tableData3.dataRows">
+                                                      <td>
+                                                          <div class="img-container">
+                                                              <img src="../../assets/img/{{row[0]}}.jpg" alt="...">
+                                                          </div>
+                                                      </td>
+                                                      <td class="td-name">
+                                                          <a >{{row[1]}}</a>
+                                                          <br />
+                                                      </td>
+                                                      <td>{{row[2]}}</td>
+                                                      <td>
+                                                          {{row[3]}}
+                                                      </td>
+                                                      <td class="td-number text-right"><small>$</small> {{row[4]}}</td>
+                                                      
+                                                      <td class="td-number">
+                                                          <small>$</small>{{row[5]}}
+                                                      </td>
+                                                      <td class="td-actions">
+                                                          <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
+                                                              <i class="material-icons">close</i>
+                                                          </button>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td colspan="5"></td>
+                                                      <td class="td-total">
+                                                          Total
+                                                      </td>
+                                                      <td colspan="1" class="td-price">
+                                                          {{getTotal()| currency:'USD':true:'1.2-2'}}
+                                                      </td>
+                                                      <td></td>
+                                                  </tr>
+                                              </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                           
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="card">
+                    <div class="card-content text-center">
+                        <code>col-md-3 col-md-offset-6</code>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+</div>
